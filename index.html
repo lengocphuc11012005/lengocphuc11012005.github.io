@@ -5,618 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lê Ngọc Phúc | Portfolio</title>
     <style>
-        /* ============ RESET & BASE ============ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0e17; color: #e0e0e0; line-height: 1.6; }
+        a { color: #00d4ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0e17;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
+        /* Header */
+        header { background: #0d1b2a; text-align: center; padding: 50px 20px 30px; border-bottom: 3px solid #00d4ff; }
+        header h1 { font-size: 2.5em; color: #fff; }
+        header h1 span { color: #00d4ff; }
+        header p { color: #a0b4c8; margin-top: 5px; }
+        header .links { margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        header .links a { background: #162230; padding: 8px 18px; border-radius: 20px; border: 1px solid #00d4ff; font-size: 0.9em; }
+        header .links a:hover { background: #00d4ff; color: #0a0e17; }
 
-        a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
+        /* Sections */
+        section { margin-bottom: 40px; }
+        section h2 { color: #fff; font-size: 1.8em; border-bottom: 2px solid #00d4ff; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; }
 
-        a:hover {
-            text-decoration: underline;
-        }
+        /* About */
+        .about p { color: #b0c4d8; margin-bottom: 10px; }
+        .stats { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .stat { background: #111927; border: 1px solid #1e2d3d; border-radius: 10px; padding: 15px 25px; text-align: center; }
+        .stat .num { font-size: 1.8em; color: #00d4ff; font-weight: bold; }
+        .stat .lbl { color: #a0b4c8; font-size: 0.85em; }
 
-        /* ============ HEADER ============ */
-        header {
-            background: linear-gradient(135deg, #0d1b2a, #1b2838);
-            text-align: center;
-            padding: 60px 20px 40px;
-            border-bottom: 3px solid #00d4ff;
-        }
+        /* Projects */
+        .project { background: #111927; border: 1px solid #1e2d3d; border-radius: 10px; padding: 20px; margin-bottom: 15px; }
+        .project h3 { color: #00d4ff; }
+        .project .info { color: #607d8b; font-size: 0.85em; margin: 5px 0 10px; }
+        .project ul { padding-left: 20px; color: #b0c4d8; }
+        .project ul li { margin-bottom: 4px; }
 
-        header h1 {
-            font-size: 3em;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
+        /* Table */
+        table { width: 100%; border-collapse: collapse; background: #111927; border-radius: 10px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1e2d3d; }
+        th { background: #162230; color: #00d4ff; }
+        tr:hover { background: #162230; }
 
-        header h1 span {
-            color: #00d4ff;
-        }
+        /* Skills */
+        .skill-group { background: #111927; border: 1px solid #1e2d3d; border-radius: 10px; padding: 15px; margin-bottom: 10px; }
+        .skill-group h3 { color: #00d4ff; font-size: 1em; margin-bottom: 10px; }
+        .skill-group span { display: inline-block; background: #162230; padding: 4px 10px; border-radius: 12px; margin: 3px; font-size: 0.85em; color: #b0c4d8; }
 
-        header .tagline {
-            font-size: 1.2em;
-            color: #a0b4c8;
-            margin-bottom: 20px;
-        }
+        /* Contact */
+        .contact-row { display: flex; gap: 15px; flex-wrap: wrap; }
+        .contact-box { background: #111927; border: 1px solid #1e2d3d; border-radius: 10px; padding: 20px; text-align: center; flex: 1; min-width: 180px; }
+        .contact-box .icon { font-size: 1.8em; margin-bottom: 5px; }
+        .contact-box .lbl { color: #a0b4c8; font-size: 0.9em; }
 
-        header .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
-        }
+        /* Footer */
+        footer { background: #0d1b2a; text-align: center; padding: 15px; color: #607d8b; border-top: 1px solid #1e2d3d; font-size: 0.85em; }
 
-        header .contact-links a {
-            background: #162230;
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
-            transition: all 0.3s;
-            font-size: 0.95em;
-        }
-
-        header .contact-links a:hover {
-            background: #00d4ff;
-            color: #0a0e17;
-            text-decoration: none;
-        }
-
-        /* ============ NAVIGATION ============ */
-        nav {
-            background: #111927;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #1e2d3d;
-        }
-
-        nav a {
-            color: #a0b4c8;
-            margin: 0 20px;
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 1.05em;
-        }
-
-        nav a:hover {
-            color: #00d4ff;
-            text-decoration: none;
-        }
-
-        /* ============ CONTAINER ============ */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* ============ SECTIONS ============ */
-        section {
-            margin-bottom: 50px;
-        }
-
-        section h2 {
-            font-size: 2em;
-            color: #ffffff;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #00d4ff;
-            display: inline-block;
-        }
-
-        section h3 {
-            color: #00d4ff;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        /* ============ ABOUT ============ */
-        .about-content {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            color: #b0c4d8;
-        }
-
-        .about-highlights {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .highlight-box {
-            background: #111927;
-            border: 1px solid #1e2d3d;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
-        }
-
-        .highlight-box .number {
-            font-size: 2em;
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        .highlight-box .label {
-            color: #a0b4c8;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        /* ============ PROJECTS ============ */
-        .project-card {
-            background: #111927;
-            border: 1px solid #1e2d3d;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-            border-color: #00d4ff;
-        }
-
-        .project-card h3 {
-            margin-bottom: 5px;
-        }
-
-        .project-card .date {
-            color: #607d8b;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .project-card .tech {
-            color: #00d4ff;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-
-        .project-card ul {
-            list-style: disc;
-            padding-left: 20px;
-            color: #b0c4d8;
-        }
-
-        .project-card ul li {
-            margin-bottom: 5px;
-        }
-
-        .project-card .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            background: #162230;
-            padding: 8px 16px;
-            border-radius: 5px;
-            border: 1px solid #00d4ff;
-            transition: all 0.3s;
-        }
-
-        .project-card .project-link:hover {
-            background: #00d4ff;
-            color: #0a0e17;
-            text-decoration: none;
-        }
-
-        /* ============ CERTIFICATIONS ============ */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #111927;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #1e2d3d;
-        }
-
-        th {
-            background: #162230;
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background: #162230;
-        }
-
-        /* ============ SKILLS ============ */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: #111927;
-            border: 1px solid #1e2d3d;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .skill-category h3 {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: #162230;
-            color: #b0c4d8;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            border: 1px solid #1e2d3d;
-        }
-
-        /* ============ CONTACT ============ */
-        .contact-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-card {
-            background: #111927;
-            border: 1px solid #1e2d3d;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            transition: border-color 0.3s;
-        }
-
-        .contact-card:hover {
-            border-color: #00d4ff;
-        }
-
-        .contact-card .icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .contact-card .label {
-            color: #a0b4c8;
-            margin-bottom: 5px;
-        }
-
-        .contact-card .value {
-            color: #00d4ff;
-            word-break: break-all;
-        }
-
-        /* ============ FOOTER ============ */
-        footer {
-            background: #0d1b2a;
-            text-align: center;
-            padding: 20px;
-            color: #607d8b;
-            border-top: 1px solid #1e2d3d;
-            font-size: 0.9em;
-        }
-
-        /* ============ RESPONSIVE ============ */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 0.9em;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            .contact-row { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============ HEADER ============ -->
+    <!-- HEADER -->
     <header>
         <h1>Lê <span>Ngọc</span> Phúc</h1>
-        <p class="tagline">Sinh viên Công nghệ Thông tin | Định hướng An ninh mạng</p>
-        <div class="contact-links">
+        <p>Sinh viên Công nghệ Thông tin | Định hướng An ninh mạng</p>
+        <div class="links">
             <a href="mailto:lengocphuc11012005@gmail.com">📧 Email</a>
             <a href="https://github.com/lengocphuc11012005" target="_blank">💻 GitHub</a>
-            <a href="https://linkedin.com/in/ngocphucle" target="_blank">🔗 LinkedIn</a>
-            <a href="https://tryhackme.com/p/ngocphucle" target="_blank">🛡️ TryHackMe</a>
+            <a href="https://www.linkedin.com/in/le-ngoc-phuc-1490a1392/" target="_blank">🔗 LinkedIn</a>
         </div>
     </header>
 
-    <!-- ============ NAVIGATION ============ -->
-    <nav>
-        <a href="#about">Giới thiệu</a>
-        <a href="#projects">Dự án</a>
-        <a href="#certifications">Chứng chỉ</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#contact">Liên hệ</a>
-    </nav>
-
-    <!-- ============ MAIN CONTENT ============ -->
+    <!-- CONTENT -->
     <div class="container">
 
-        <!-- ABOUT -->
-        <section id="about">
+        <!-- Giới thiệu -->
+        <section>
             <h2>👋 Giới thiệu</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Xin chào! Tôi là <strong>Lê Ngọc Phúc</strong>, sinh viên năm ba tại 
-                        <strong>Trường Đại học Sư phạm TP. Hồ Chí Minh</strong>, chuyên ngành 
-                        <strong>Mạng máy tính và An ninh mạng</strong>.
-                    </p>
-                    <p>
-                        Tôi đam mê khám phá các lỗ hổng bảo mật, thực hành kiểm thử xâm nhập 
-                        và xây dựng hệ thống phòng thủ. Mục tiêu của tôi là trở thành một 
-                        <strong>Chuyên viên Kiểm thử Xâm nhập (Penetration Tester)</strong> chuyên nghiệp.
-                    </p>
-                    <p>
-                        Hiện tại, tôi đang tập trung học tập và thực hành trên các nền tảng 
-                        TryHackMe, HackTheBox và xây dựng các dự án cá nhân về an ninh mạng.
-                    </p>
-                </div>
+            <div class="about">
+                <p>Xin chào! Tôi là <strong>Lê Ngọc Phúc</strong>, sinh viên năm ba tại <strong>Trường Đại học Sư phạm TP. Hồ Chí Minh</strong>, chuyên ngành <strong>Mạng máy tính và An ninh mạng</strong>.</p>
+                <p>Tôi đam mê khám phá các lỗ hổng bảo mật, thực hành kiểm thử xâm nhập và xây dựng hệ thống phòng thủ. Mục tiêu trở thành <strong>Chuyên viên Kiểm thử Xâm nhập</strong> chuyên nghiệp.</p>
             </div>
-            <div class="about-highlights">
-                <div class="highlight-box">
-                    <div class="number">5+</div>
-                    <div class="label">Khóa học hoàn thành</div>
-                </div>
-                <div class="highlight-box">
-                    <div class="number">3</div>
-                    <div class="label">Dự án cá nhân</div>
-                </div>
-                <div class="highlight-box">
-                    <div class="number">30+</div>
-                    <div class="label">Phòng lab TryHackMe</div>
-                </div>
-                <div class="highlight-box">
-                    <div class="number">6</div>
-                    <div class="label">Chứng chỉ</div>
-                </div>
+            <div class="stats">
+                <div class="stat"><div class="num">5+</div><div class="lbl">Khóa học</div></div>
+                <div class="stat"><div class="num">3</div><div class="lbl">Dự án</div></div>
+                <div class="stat"><div class="num">30+</div><div class="lbl">Lab THM</div></div>
+                <div class="stat"><div class="num">6</div><div class="lbl">Chứng chỉ</div></div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects">
+        <!-- Dự án -->
+        <section>
             <h2>🚀 Dự án cá nhân</h2>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>QuickScan - Công cụ quét mạng tự động</h3>
-                <p class="date">📅 Tháng 3/2026</p>
-                <p class="tech">🛠️ Kali Linux, Bash Script, Nmap</p>
+                <p class="info">📅 03/2026 | 🛠️ Kali Linux, Bash, Nmap</p>
                 <ul>
-                    <li>Phát triển công cụ quét mạng tự động viết bằng Bash script, chạy trên Kali Linux</li>
-                    <li>Tự động hóa quy trình quét cổng, phát hiện phiên bản dịch vụ và nhận dạng hệ điều hành</li>
-                    <li>Tạo báo cáo chi tiết có đánh dấu thời gian để lưu trữ và phân tích sau khi quét</li>
-                    <li>Sử dụng Nmap với các tùy chọn -T4, -sV, -O, -sC để quét toàn diện mục tiêu</li>
+                    <li>Công cụ quét mạng tự động, tự động hóa quy trình quét cổng và phát hiện dịch vụ</li>
+                    <li>Tạo báo cáo chi tiết có đánh dấu thời gian để phân tích sau</li>
+                    <li><a href="https://github.com/lengocphuc11012005/quickscan" target="_blank">Xem trên GitHub →</a></li>
                 </ul>
-                <a href="https://github.com/lengocphuc11012005/quickscan" target="_blank" class="project-link">📂 Xem trên GitHub</a>
             </div>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>Phòng thí nghiệm An ninh mạng ảo</h3>
-                <p class="date">📅 Tháng 2/2026 - Nay</p>
-                <p class="tech">🛠️ VirtualBox, Kali Linux, Metasploitable, Windows VM</p>
+                <p class="info">📅 02/2026 - Nay | 🛠️ VirtualBox, Kali Linux, Metasploitable</p>
                 <ul>
-                    <li>Thiết lập môi trường thực hành an ninh mạng hoàn chỉnh trên máy ảo</li>
-                    <li>Thực hành các kỹ thuật trinh sát, quét lỗ hổng và khai thác cơ bản</li>
-                    <li>Áp dụng kiến thức OWASP Top 10 để phân tích các ứng dụng web mẫu</li>
-                    <li>Cấu hình mạng nội bộ giữa các máy ảo để mô phỏng môi trường doanh nghiệp</li>
+                    <li>Thiết lập môi trường thực hành bảo mật hoàn chỉnh trên máy ảo</li>
+                    <li>Thực hành trinh sát, quét lỗ hổng và khai thác cơ bản</li>
                 </ul>
-                <a href="https://github.com/lengocphuc11012005/vulnerability-lab" target="_blank" class="project-link">📂 Xem trên GitHub</a>
             </div>
 
-            <div class="project-card">
+            <div class="project">
                 <h3>Phân tích lỗ hổng Web (OWASP Top 10)</h3>
-                <p class="date">📅 Tháng 1/2026 - Tháng 2/2026</p>
-                <p class="tech">🛠️ Burp Suite, DVWA, WebGoat, OWASP ZAP</p>
+                <p class="info">📅 01/2026 - 02/2026 | 🛠️ Burp Suite, DVWA, WebGoat</p>
                 <ul>
-                    <li>Thực hành khai thác các lỗ hổng SQL Injection, XSS, CSRF và Command Injection</li>
-                    <li>Sử dụng Burp Suite để chặn và phân tích các yêu cầu và phản hồi HTTP</li>
-                    <li>Viết báo cáo phân tích chi tiết bao gồm nguyên nhân, các bước khai thác và biện pháp khắc phục</li>
-                    <li>So sánh mức độ nghiêm trọng của từng lỗ hổng theo thang điểm CVSS</li>
+                    <li>Thực hành khai thác SQL Injection, XSS, CSRF, Command Injection</li>
+                    <li>Viết báo cáo phân tích nguyên nhân và biện pháp khắc phục</li>
                 </ul>
-                <a href="https://github.com/lengocphuc11012005/owasp-analysis" target="_blank" class="project-link">📂 Xem trên GitHub</a>
             </div>
         </section>
 
-        <!-- CERTIFICATIONS -->
-        <section id="certifications">
+        <!-- Chứng chỉ -->
+        <section>
             <h2>📜 Chứng chỉ</h2>
             <table>
-                <thead>
-                    <tr>
-                        <th>Chứng chỉ</th>
-                        <th>Nền tảng</th>
-                        <th>Thời gian</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mạng máy tính - Bảo mật mạng kỹ thuật số</td>
-                        <td>Alison</td>
-                        <td>03/2026</td>
-                    </tr>
-                    <tr>
-                        <td>An ninh mạng: Hiểu rõ các mối đe dọa và ngăn chặn</td>
-                        <td>Alison</td>
-                        <td>03/2026</td>
-                    </tr>
-                    <tr>
-                        <td>Mạng điện rộng, dịch vụ mạng và bảo mật</td>
-                        <td>Alison</td>
-                        <td>03/2026</td>
-                    </tr>
-                    <tr>
-                        <td>Nhận thức về an ninh mạng và kỹ thuật số</td>
-                        <td>Alison</td>
-                        <td>03/2026</td>
-                    </tr>
-                    <tr>
-                        <td>Kiến thức cơ bản về mạng máy tính</td>
-                        <td>Alison</td>
-                        <td>03/2026</td>
-                    </tr>
-                    <tr>
-                        <td>Linux Unhatched</td>
-                        <td>Cisco Networking Academy</td>
-                        <td>02/2026</td>
-                    </tr>
-                </tbody>
+                <tr><th>Chứng chỉ</th><th>Nền tảng</th><th>Thời gian</th></tr>
+                <tr><td>Mạng máy tính - Bảo mật mạng kỹ thuật số</td><td>Alison</td><td>03/2026</td></tr>
+                <tr><td>An ninh mạng: Hiểu rõ các mối đe dọa</td><td>Alison</td><td>03/2026</td></tr>
+                <tr><td>Mạng điện rộng, dịch vụ mạng và bảo mật</td><td>Alison</td><td>03/2026</td></tr>
+                <tr><td>Nhận thức về an ninh mạng và kỹ thuật số</td><td>Alison</td><td>03/2026</td></tr>
+                <tr><td>Kiến thức cơ bản về mạng máy tính</td><td>Alison</td><td>03/2026</td></tr>
+                <tr><td>Linux Unhatched</td><td>Cisco</td><td>02/2026</td></tr>
             </table>
         </section>
 
-        <!-- SKILLS -->
-        <section id="skills">
+        <!-- Kỹ năng -->
+        <section>
             <h2>🛠️ Kỹ năng</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🔧 Công cụ bảo mật</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Nmap</span>
-                        <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Burp Suite</span>
-                        <span class="skill-tag">Metasploit</span>
-                        <span class="skill-tag">Gobuster</span>
-                        <span class="skill-tag">Nikto</span>
-                        <span class="skill-tag">SQLMap</span>
-                        <span class="skill-tag">Hydra</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💻 Hệ điều hành</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Kali Linux</span>
-                        <span class="skill-tag">Ubuntu</span>
-                        <span class="skill-tag">Windows</span>
-                        <span class="skill-tag">VirtualBox</span>
-                        <span class="skill-tag">VMware</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🌐 Mạng máy tính</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TCP/IP</span>
-                        <span class="skill-tag">OSI Model</span>
-                        <span class="skill-tag">DNS</span>
-                        <span class="skill-tag">DHCP</span>
-                        <span class="skill-tag">HTTP/HTTPS</span>
-                        <span class="skill-tag">Subnetting</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💻 Lập trình</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Bash Script</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>📦 Khác</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">LaTeX</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Trello</span>
-                        <span class="skill-tag">Google Workspace</span>
-                    </div>
-                </div>
+            <div class="skill-group">
+                <h3>🔧 Công cụ bảo mật</h3>
+                <span>Nmap</span><span>Wireshark</span><span>Burp Suite</span><span>Metasploit</span><span>Gobuster</span><span>Nikto</span><span>SQLMap</span>
+            </div>
+            <div class="skill-group">
+                <h3>💻 Hệ điều hành</h3>
+                <span>Kali Linux</span><span>Ubuntu</span><span>Windows</span><span>VirtualBox</span><span>VMware</span>
+            </div>
+            <div class="skill-group">
+                <h3>🌐 Mạng & Lập trình</h3>
+                <span>TCP/IP</span><span>DNS</span><span>HTTP/HTTPS</span><span>Python</span><span>Bash</span><span>HTML/CSS</span><span>SQL</span>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
+        <!-- Liên hệ -->
+        <section>
             <h2>📞 Liên hệ</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
+            <div class="contact-row">
+                <div class="contact-box">
                     <div class="icon">📧</div>
-                    <div class="label">Email</div>
-                    <div class="value">
-                        <a href="mailto:lengocphuc11012005@gmail.com">lengocphuc11012005@gmail.com</a>
-                    </div>
+                    <div class="lbl">Email</div>
+                    <a href="mailto:lengocphuc11012005@gmail.com">lengocphuc11012005@gmail.com</a>
                 </div>
-
-                <div class="contact-card">
+                <div class="contact-box">
                     <div class="icon">💻</div>
-                    <div class="label">GitHub</div>
-                    <div class="value">
-                        <a href="https://github.com/lengocphuc11012005" target="_blank">github.com/lengocphuc11012005</a>
-                    </div>
+                    <div class="lbl">GitHub</div>
+                    <a href="https://github.com/lengocphuc11012005" target="_blank">github.com/lengocphuc11012005</a>
                 </div>
-
-                <div class="contact-card">
+                <div class="contact-box">
                     <div class="icon">🔗</div>
-                    <div class="label">LinkedIn</div>
-                    <div class="value">
-                        <a href="https://linkedin.com/in/ngocphucle" target="_blank">linkedin.com/in/ngocphucle</a>
-                    </div>
-                
+                    <div class="lbl">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/le-ngoc-phuc-1490a1392/" target="_blank">linkedin.com/in/le-ngoc-phuc</a>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <!-- ============ FOOTER ============ -->
+    <!-- FOOTER -->
     <footer>
-        &copy; 2026 Lê Ngọc Phúc. Tất cả quyền được bảo lưu. | Thiết kế bởi Lê Ngọc Phúc
+        &copy; 2026 Lê Ngọc Phúc. Tất cả quyền được bảo lưu.
     </footer>
 
 </body>
