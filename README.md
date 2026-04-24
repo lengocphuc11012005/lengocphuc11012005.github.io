@@ -18,7 +18,6 @@ Công cụ quét mạng viết bằng Bash script, chạy trên Kali Linux, tự
 Môi trường thực hành bảo mật hoàn chỉnh trên máy ảo với Kali Linux, Metasploitable và Windows VM.
 
 - **Công nghệ:** VirtualBox, Kali Linux, Metasploitable, Wireshark
-- **Link:** [github.com/lengocphuc11012005/vulnerability-lab](https://github.com/lengocphuc11012005/vulnerability-lab)
 
 ### Phân tích lỗ hổng Web (OWASP Top 10)
 Thực hành khai thác và viết báo cáo phân tích các lỗ hổng SQL Injection, XSS, CSRF, Command Injection.
@@ -37,7 +36,6 @@ Thực hành khai thác và viết báo cáo phân tích các lỗ hổng SQL In
 | Mạng điện rộng, dịch vụ mạng và bảo mật | Alison | 03/2026 |
 | Nhận thức về an ninh mạng và kỹ thuật số | Alison | 03/2026 |
 | Kiến thức cơ bản về mạng máy tính | Alison | 03/2026 |
-| Linux Unhatched | Cisco | 02/2026 |
 
 ---
 
